@@ -27,9 +27,9 @@ Also remember that you will be able to add container definitions for your backen
 | `docker-compose up` | Start the local database environment |
 | `docker-compose down` | Stop the local database environment. Keeps the data volume so changes to the database persist. |
 | `docker-compose down -v` | Stop the local database environment. Delete the database data volume. Useful when wanting to start from scratch. |
-| `docker-compose exec mongo bash` | Start a bash shell within the running mongodb container. |
-| `docker-compose exec mysql mysql -u <USERNAME> -p ` | Will start a mysql client session within the running MariaDB container. You will need to type in the password. |
-| `docker-compose exec postgres psql -U postgres -W` | Start a psql shell within the postgres container |
+| ` docker-compose exec mongo mongo -u cscl --authenticationDatabase=cscl` | Start a mongo client session within the running Mongo container. You will need to type in the password. |
+| `docker-compose exec mysql mysql -u 'cscl' -p -D cscl` | Start a mysql client session within the running MariaDB container. You will need to type in the password. |
+| `docker-compose exec postgres psql -U postgres -W -d cscl` | Start a psql shell within the postgres container. You will need to type in the password. |
 
 Once up and running, you can access the databases as follows:  
 
