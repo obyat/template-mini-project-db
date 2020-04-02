@@ -11,7 +11,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=rootPassword
       - MONGO_INITDB_DATABASE=cscl
       - DB_USER=cscl
-      - DB_PASS=MyPassword # Please note that password must match value in 'seed/1_initialize_user.js'
+      - DB_PASS=mongo # Please note that password must match value in 'seed/1_initialize_user.js'
     volumes:
       - mongodb_data:/data/db
       - ./seed/:/docker-entrypoint-initdb.d/:ro

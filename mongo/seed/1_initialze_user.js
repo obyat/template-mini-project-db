@@ -1,6 +1,6 @@
 db.createUser({
   user: "cscl",
-  pwd: "MyPassword",
+  pwd: "mongo",
   roles: [
     {
       role: "readWrite",

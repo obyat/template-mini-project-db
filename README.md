@@ -49,7 +49,7 @@ From another container within the same `docker-compose.yml` file: cscl_db:5432
 The development database is called `cscl`
 The authentication information is:
 - Username: `cscl`
-- Password: `MyPassword`
+- Password: `mongo`
 - Authentication Database: `cscl`
 
 #### MySql
@@ -57,7 +57,7 @@ The development database is called `cscl`
 The table is called `Books`
 Authentication credentials are:
 - Username: `cscl@localhost`
-- Password: `MyPassword`
+- Password: `mysql`
 
 #### MySql
 The development database is called `cscl`
