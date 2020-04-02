@@ -30,7 +30,8 @@ Also remember that you will be able to add container definitions for your backen
 | `docker-compose exec mongo bash` | Start a bash shell within the running mongodb container. |
 | `docker-compose exec mysql -u <USERNAME> -p ` | Will start a mysql client session within the running MariaDB container. You will need to type in the password. |
 
-Once up and running, you can access the databases as follows:
+Once up and running, you can access the databases as follows:  
+
 *Mongo*
 From your computer: 127.0.0.1:27017
 From another container within the same `docker-compose.yml` file: cscl_db:27017
