@@ -1,68 +1,61 @@
 # Coffee Shop Community Library (CSCL) Database
 ## Getting Started
-### Requirements:
-- [docker](https://docs.docker.com/install/)
-- [docker-compose](https://docs.docker.com/compose/install/)
+This repository contains starter data for the CSCL Mini Project for the following database engines:
+- MongoDB (NoSQL)
+- MySQL
+- PostgreSQL
 
-### Docker & Docker-Compose
-Docker containers are used to facilitate local development. Using docker-compose you can run a local environment which contains a MongoDB or MariaDB (MySQL) database that is bootstrapped with 1,000 book records.
+<br>
+<br>
 
-Please copy the directory of the database you are interested in using to your own application repository.
-Make sure to place the files at the root of your project: 
-```
-mv mongo/* -> /my-project/
+### Mongo
+[Install Mongo Server](https://docs.mongodb.com/manual/installation/)  
 
-/my-project/
--- docker-compose.yml
--- seed/
-...
-...
-```
+By default Mongo will not have access control enabled.  You will create users and grant permissions. 
+Please refer to the Mongo [documentation](https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/index.html).
 
-Also remember that you will be able to add container definitions for your backend application to the `docker-compose.yml` file if you wish.
+#### Importing the Database
+You can find the CSCL Mongo database data in the `/mongo` directory. The easiest way to import this data is to use Mongo Compass.
 
-#### Commands
-| Command | Description |
-|:---|---|
-| `docker-compose up` | Start the local database environment |
-| `docker-compose down` | Stop the local database environment. Keeps the data volume so changes to the database persist. |
-| `docker-compose down -v` | Stop the local database environment. Delete the database data volume. Useful when wanting to start from scratch. |
-| ` docker-compose exec mongo mongo -u cscl --authenticationDatabase=cscl` | Start a mongo client session within the running Mongo container. You will need to type in the password. |
-| `docker-compose exec mysql mysql -u 'cscl' -p -D cscl` | Start a mysql client session within the running MariaDB container. You will need to type in the password. |
-| `docker-compose exec postgres psql -U postgres -W -d cscl` | Start a psql shell within the postgres container. You will need to type in the password. |
+1) Create a new database named `cscl` with a collection named `books`.
+2) Click your way to the `books` collection under the new database.
+3) Select `Add Data` then `import file`
+4) For the 'File Path' select the `/mongo/cscl_db.json` file from this repository. For 'File Type' select `JSON`. Leave the options as-is.
 
-Once up and running, you can access the databases as follows:  
+<br>
+<br>
 
-*Mongo*
-From your computer: 127.0.0.1:27017
-From another container within the same `docker-compose.yml` file: cscl_db:27017
+### MariaDB (MySql)
+[Install MariaDB](https://mariadb.com/get-started-with-mariadb/)
 
-*MySQL/MariaDB*
-From your computer: 127.0.0.1:3306
-From another container within the same `docker-compose.yml` file: cscl_db:3306
+#### Importing the Database
+You can find the CSCL SQL dump in `/mysql/cscl_db.sql`. There are many ways to import a MySQL database:
 
-*Postgres*
-From your computer: 127.0.0.1:5432
-From another container within the same `docker-compose.yml` file: cscl_db:5432
+[Using DBeaver](https://dbeaver.com/docs/wiki/Backup-Restore/)  
+[Using the Command Line](https://mariadb.com/kb/en/restoring-data-from-dump-files/)  
 
-#### Mongo
-The development database is called `cscl`
-The authentication information is:
-- Username: `cscl`
-- Password: `mongo`
-- Authentication Database: `cscl`
+<br>
+<br>
 
-#### MySql
-The development database is called `cscl`
-The table is called `Books`
-Authentication credentials are:
-- Username: `cscl@localhost`
-- Password: `mysql`
+### PostgreSQL
+[Install PostgreSQL on Mac](https://www.postgresqltutorial.com/install-postgresql-macos/)  
+[Install PostgreSQL on Linux](https://www.postgresqltutorial.com/install-postgresql-linux/)  
+[Install PostgreSQL on Windows](https://www.postgresqltutorial.com/install-postgresql/)  
 
-#### MySql
-The development database is called `cscl`
-The database is called `cscl`
-The table is called `books`
-Authentication credentials are:
-- Username: `postgres`
-- Password: `postgres`
+#### Importing the Database
+You can find the CSCL SQL dump in `/postgres/cscl_db.sql`. There are many ways to import a PostgreSQL database:
+
+[Using DBeaver](https://dbeaver.com/docs/wiki/Backup-Restore/)  
+[Using the Command Line](https://www.postgresqltutorial.com/postgresql-restore-database/)
+<br>
+<br>
+## Tools
+
+### Mongo
+[Mongo Compass (Mongo GUI Application)](https://www.mongodb.com/try/download/compass)
+
+### MariaDB / PostgreSQL
+[DBeaver (SQL GUI Application)](https://dbeaver.io/)
+
+### MariaDB
+[MySQL WorkBench](https://dev.mysql.com/downloads/workbench/)
