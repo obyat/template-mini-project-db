@@ -4,6 +4,7 @@ This repository contains starter data for the CSCL Mini Project for the followin
 - MongoDB (NoSQL)
 - MySQL
 - PostgreSQL
+- PluralSight
 
 <br>
 <br>
